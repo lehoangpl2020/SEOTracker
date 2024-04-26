@@ -8,8 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
-//builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(GetRankRecordQueryHandler).Assembly));
-
 
 
 builder.Services.AddControllers();
@@ -35,6 +33,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(builder => builder.AllowAnyOrigin()
+                           .AllowAnyHeader()
+                           .AllowAnyMethod());
 
 app.UseAuthorization();
 
