@@ -35,6 +35,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Add logging
+builder.Services.AddLogging(loggingBuilder =>
+{
+    loggingBuilder.AddConsole(); 
+    loggingBuilder.AddDebug();
+});
+
 var app = builder.Build();
 
 // Ensure the database is created
