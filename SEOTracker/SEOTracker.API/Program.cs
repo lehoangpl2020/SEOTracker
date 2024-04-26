@@ -1,12 +1,32 @@
 using SEOTracker.Application;
 using SEOTracker.Application.History.Queries;
+using SEOTracker.Application.Interfaces;
+using SEOTracker.Core.Enums;
 using SEOTracker.Infrastructure;
 using SEOTracker.Infrastructure.Data;
+using SEOTracker.Infrastructure.Services.Scrapers;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddInfrastructure(builder.Configuration);
+
+
+builder.Services.AddScoped<GoogleScraper>();
+builder.Services.AddScoped<BingScraper>();
+builder.Services.AddTransient<Func<SearchEngineType, ISearchEngineScraper>>(serviceProvider => key =>
+{
+    switch (key)
+    {
+        case SearchEngineType.Google:
+            return serviceProvider.GetService<GoogleScraper>();
+        case SearchEngineType.Bing:
+            return serviceProvider.GetService<BingScraper>();
+        default:
+            return serviceProvider.GetService<GoogleScraper>();
+    }
+});
+
 builder.Services.AddApplication();
 
 

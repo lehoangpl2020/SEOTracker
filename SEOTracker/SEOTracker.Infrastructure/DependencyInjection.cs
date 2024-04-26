@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SEOTracker.Application.Interfaces;
 using SEOTracker.Infrastructure.Data;
+using SEOTracker.Infrastructure.Services;
 
 namespace SEOTracker.Infrastructure
 {
@@ -15,6 +16,7 @@ namespace SEOTracker.Infrastructure
 
             services.AddScoped<ISEOTrackerDbContext, SEOTrackerDbContext>();
 
+            services.AddSingleton<ISeleninumService, SeleniumService>();
 
             return services;
         }
