@@ -16,11 +16,11 @@ Before running the application, make sure you have the following prerequisites i
 
 2. Navigate to the `SEOTracker.API` directory.
 
-3. Open `appsettings.json` and update the connection string to point to your SQL Express database.
+3. Open `appsettings.json` and update the connection string to point to your SQL Express database. The system will automatically create the database.
 
 4. Open a terminal window and run the following commands:
-dotnet restore
-dotnet run
+- dotnet restore
+- dotnet run
 
 
 5. The API should now be running on `https://localhost:7127`.
@@ -30,8 +30,8 @@ dotnet run
 1. Navigate to the `SEOTracker.SPA` directory.
 
 2. Open a terminal window and run the following commands:
-npm install
-npm run dev
+- npm install
+- npm run dev
 
 3. The SPA should now be running on `http://localhost:5173`.
 
