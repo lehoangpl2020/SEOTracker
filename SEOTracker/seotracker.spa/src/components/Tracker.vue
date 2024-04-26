@@ -4,7 +4,12 @@
         <div class="search">
             <input type="text" v-model="keywords" />
             <input type="text" v-model="url" />
-            <button @click="onClickSearch">Search</button>
+            <!--<button @click="onClickSearch">Search</button>-->
+
+            <button @click="onClickSearch">
+                <span v-if="loading" class="spinner"></span>
+                <span v-else>Search</span>
+            </button>
         </div>
 
         <div class="search-result">
@@ -53,7 +58,7 @@
         },
         methods: {
             loadItems() {
-                this.loading = true;
+                //this.loading = true;
                 fetch('https://localhost:7127/history', {
                     method: 'GET',
                     headers: {
@@ -68,9 +73,25 @@
                     });
             },
             onClickSearch() {
-                console.log(this.keywords);
-
-
+                this.loading = true;
+                fetch(`https://localhost:7127/tracker`, {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ keywords: this.keywords, url: this.url })
+                }).then(response => response.json())
+                  .then(json => {
+                      this.result = json;
+                      this.loadItems();
+                  })
+                  .catch(error => {
+                      this.result = 'Search failed';
+                  })
+                  .finally(() => {
+                      this.loading = false;
+                  });
             }
 
         }
@@ -113,7 +134,7 @@
             border-color: #5cb85c;
         }
 
-    button {
+    /*button {
         padding: 12px 20px;
         background-color: #5cb85c;
         color: white;
@@ -128,6 +149,36 @@
             background-color: #4cae4c;
             box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
+*/
+    button {
+        padding: 12px 20px;
+        background-color: #007bff; /* A bright blue color for visibility */
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-weight: bold;
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        button:hover, button:focus {
+            background-color: #0056b3; /* A darker shade of blue for the hover state */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+    .spinner {
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top: 4px solid #fff;
+        width: 16px;
+        height: 16px;
+        animation: spin 1s linear infinite;
+    }
+
 
     table {
         width: 100%;
