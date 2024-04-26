@@ -13,9 +13,8 @@ namespace SEOTracker.Application
         {
             var assembly = typeof(DependencyInjection).Assembly;
 
-            //services.AddMediatR(cfg => cfg.AsScoped(), assembly);
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(GetRankRecordQueryHandler).Assembly));
-            
+
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(UnhandledExceptionBehavior<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBahavior<,>));
 

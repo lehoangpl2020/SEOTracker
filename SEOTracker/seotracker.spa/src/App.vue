@@ -1,17 +1,15 @@
 <script setup lang="ts">
-    import HelloWorld from './components/HelloWorld.vue'
-    import TheWelcome from './components/TheWelcome.vue'
     import Tracker from './components/Tracker.vue'
 </script>
 
 <template>
-    <header>
+    <!--<header>-->
         <!--<img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />-->
 
-        <div class="wrapper">
+        <!--<div class="wrapper">-->
             <!--<HelloWorld msg="You did it!" />-->
-        </div>
-    </header>
+        <!--</div>
+    </header>-->
 
     <main>
         <!--<TheWelcome />-->
@@ -28,6 +26,17 @@
     .logo {
         display: block;
         margin: 0 auto 2rem;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Vertically center the content */
+        align-items: center; /* Horizontally center the content */
+        min-height: 100vh; /* Full viewport height */
+        max-width: 1200px; /* Maximum width of the container */
+        margin: 0 auto; /* Center the container */
+        padding: 1rem; /* Optional: some padding inside the container */
     }
 
     @media (min-width: 1024px) {

@@ -1,11 +1,6 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SEOTracker.Application.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SEOTracker.Application.History.Queries
 {
@@ -22,7 +17,9 @@ namespace SEOTracker.Application.History.Queries
             var records = await _trackerDbContext
                 .RankRecords
                 .Include(x => x.Positions)
+                .OrderByDescending(x => x.CheckedDate)
                 .ToListAsync(cancellationToken);
+
             var dtos = records.Select(x => new RankRecordDto
             {
                 CheckedDate = x.CheckedDate,

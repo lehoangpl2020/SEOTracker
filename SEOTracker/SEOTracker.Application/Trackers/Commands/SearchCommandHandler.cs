@@ -2,11 +2,6 @@
 using SEOTracker.Application.Interfaces;
 using SEOTracker.Core.Entities;
 using SEOTracker.Core.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SEOTracker.Application.Trackers.Commands
 {
@@ -33,7 +28,7 @@ namespace SEOTracker.Application.Trackers.Commands
                 Keywords = request.Keywords,
                 Url = request.Url,
                 CheckedDate = DateTime.Now,
-                SearchEngine = "google",
+                SearchEngine = request.SearchEngine.ToString(),
                 Positions = positions.Select(x=>new RankPosition { Position = x}).ToList()
             };
 

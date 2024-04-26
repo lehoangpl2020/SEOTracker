@@ -1,8 +1,6 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using SEOTracker.Application.History.Queries;
 using SEOTracker.Application.Trackers.Commands;
 namespace SEOTracker.API.Controllers
 {

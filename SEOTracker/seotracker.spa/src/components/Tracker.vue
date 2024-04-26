@@ -32,7 +32,7 @@
                         <td>{{ item.searchEngine }}</td>
                         <td>{{ item.keywords }}</td>
                         <td>{{ item.positions }}</td>
-                        <td>{{ item.Url }}</td>
+                        <td>{{ item.url }}</td>
                         <td>{{ item.checkedDate}}</td>
                     </tr>
                 </tbody>

@@ -6,5 +6,4 @@ namespace SEOTracker.API
     {
         public SearchEngineType SearchEngine { get;set; }
     }
-
 }

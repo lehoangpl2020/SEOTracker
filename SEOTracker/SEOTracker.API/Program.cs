@@ -1,5 +1,4 @@
 using SEOTracker.Application;
-using SEOTracker.Application.History.Queries;
 using SEOTracker.Application.Interfaces;
 using SEOTracker.Core.Enums;
 using SEOTracker.Infrastructure;
@@ -31,12 +30,12 @@ builder.Services.AddApplication();
 
 
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
-
 
 // Ensure the database is created
 using (var scope = app.Services.CreateScope())
