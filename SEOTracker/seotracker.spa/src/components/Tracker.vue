@@ -6,7 +6,7 @@
             <input type="text" v-model="url" />
             <!--<button @click="onClickSearch">Search</button>-->
 
-            <button @click="onClickSearch">
+            <button @click="onClickSearch" :disabled="loading">
                 <span v-if="loading" class="spinner"></span>
                 <span v-else>Search</span>
             </button>
