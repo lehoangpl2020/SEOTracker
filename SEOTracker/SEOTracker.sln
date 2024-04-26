@@ -5,6 +5,14 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEOTracker.API", "SEOTracker.API\SEOTracker.API.csproj", "{09A75ADD-D7C2-491F-B490-075A98669B15}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEOTracker.Core", "SEOTracker.Core\SEOTracker.Core.csproj", "{369F0755-A927-4873-9167-BB88E589B93E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEOTracker.Application", "SEOTracker.Application\SEOTracker.Application.csproj", "{1B823718-7B11-4931-88C9-6537380B08A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEOTracker.Infrastructure", "SEOTracker.Infrastructure\SEOTracker.Infrastructure.csproj", "{8EB70D86-3434-4253-8F56-A11277A66E2A}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "seotracker.spa", "SEOTracker.SPA\seotracker.spa.esproj", "{9B3FF657-5FFF-4996-848B-209EC0B2885C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +23,24 @@ Global
 		{09A75ADD-D7C2-491F-B490-075A98669B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09A75ADD-D7C2-491F-B490-075A98669B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09A75ADD-D7C2-491F-B490-075A98669B15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{369F0755-A927-4873-9167-BB88E589B93E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{369F0755-A927-4873-9167-BB88E589B93E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{369F0755-A927-4873-9167-BB88E589B93E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{369F0755-A927-4873-9167-BB88E589B93E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B823718-7B11-4931-88C9-6537380B08A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B823718-7B11-4931-88C9-6537380B08A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B823718-7B11-4931-88C9-6537380B08A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B823718-7B11-4931-88C9-6537380B08A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EB70D86-3434-4253-8F56-A11277A66E2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EB70D86-3434-4253-8F56-A11277A66E2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EB70D86-3434-4253-8F56-A11277A66E2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EB70D86-3434-4253-8F56-A11277A66E2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B3FF657-5FFF-4996-848B-209EC0B2885C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B3FF657-5FFF-4996-848B-209EC0B2885C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B3FF657-5FFF-4996-848B-209EC0B2885C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9B3FF657-5FFF-4996-848B-209EC0B2885C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B3FF657-5FFF-4996-848B-209EC0B2885C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B3FF657-5FFF-4996-848B-209EC0B2885C}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
