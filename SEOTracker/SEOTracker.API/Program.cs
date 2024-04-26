@@ -1,3 +1,5 @@
+using SEOTracker.Application;
+using SEOTracker.Application.History.Queries;
 using SEOTracker.Infrastructure;
 using SEOTracker.Infrastructure.Data;
 
@@ -5,7 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddInfrastructure(builder.Configuration);
-
+builder.Services.AddApplication();
+//builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(GetRankRecordQueryHandler).Assembly));
 
 
 
